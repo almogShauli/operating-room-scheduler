@@ -1,15 +1,4 @@
 # Operating Room Scheduler
-
-A TypeScript-based web service for scheduling operating room surgeries with load balancing and queue management.
-
-## Features
-
-- **Room Scheduling**: Automatically schedules surgeries in available OR rooms
-- **Load Balancing**: Uses Round-Robin algorithm to distribute workload across rooms
-- **Queue Management**: In-memory FIFO queue for requests when all rooms are full
-- **Doctor Types**: Supports Heart Surgeons and Brain Surgeons with different duration requirements
-- **Equipment Matching**: Automatically matches doctors with compatible rooms based on equipment needs
-
 ## Quick Start
 
 1. **Install dependencies:**
@@ -49,7 +38,7 @@ POST /api/surgery/request
 Content-Type: application/json
 
 {
-  "doctorType": "heart_surgeon"  # or "brain_surgeon"
+  "doctorType": "heart_surgeon" or "brain_surgeon"
 }
 ```
 
@@ -66,32 +55,4 @@ Content-Type: application/json
 {
   "queuePosition": 2
 }
-```
-
-### Health Check
-
-```bash
-GET /health
-```
-
-## Architecture
-
-- **TypeScript**: Full type safety
-- **Fastify**: High-performance web framework
-- **In-Memory Storage**: Fast, no database required
-- **Modular Design**: Clean separation of concerns
-
-## Project Structure
-
-```
-src/
-├── types/          # TypeScript types and interfaces
-├── services/       # Business logic
-│   ├── scheduler.ts      # Main scheduling logic
-│   ├── orRooms.ts        # Room management
-│   ├── queue.ts          # Queue management
-│   └── ...
-├── routes/         # API endpoints
-├── config/         # Configuration
-└── index.ts        # Entry point
 ```
